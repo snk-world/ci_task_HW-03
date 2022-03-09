@@ -7,6 +7,15 @@ node('master') {
 		sh "docker-compose down"
 		sh "docker-compose up -d"
 	}
+	stage('check status') {
+		def response = sh(script: " curl -I http://localhost:9889 | grep HTTP | awk '{print $2}'", returnStdout: true).trim()
+		echo response
+		if (response != '200') {
+			echo not ok
+		} else {
+			echo ok
+		} 	
+	}
 	stage('clear workspace') {
 		//sh 'docker-compose down'
 		sh 'echo end'
