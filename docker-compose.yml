@@ -7,5 +7,6 @@ services:
             - "9889:80"
         volumes:
           #- ./hosts:/etc/nginx/conf.d
-            - ./www:/var/www
+            - ./www:/var/www/html
             - ./logs:/var/log/nginx
+            - ./conf:/etc/nginx/conf.d
