@@ -8,7 +8,7 @@ node('master') {
 		sh "docker-compose up -d"
 	}
 	stage('clear workspace') {
-		sh 'docker-compose down'
+		//sh 'docker-compose down'
 		sh 'echo end'
 	}
 }
