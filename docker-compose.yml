@@ -2,6 +2,7 @@ version: '3'
 services:
     nginx:
         image: nginx:latest
+        container-name: nginx_test
         ports:
             - "9889:80"
         volumes:
