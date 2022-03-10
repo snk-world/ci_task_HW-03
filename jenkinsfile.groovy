@@ -21,7 +21,7 @@ node('master') {
 		def md5http= sh(script: "curl -sL http://localhost:9889/index.html | md5sum | cut -d ' ' -f 1", returnStdout:true).trim()	
 
 		def md5local= sh(script: "md5sum www/index.html | cut -d ' ' -f 1", returnStdout:true).trim()	
-		if (md5thhp != md5local){
+		if (md5http != md5local){
 			echo 'not ok'
 			error = true
 		}
