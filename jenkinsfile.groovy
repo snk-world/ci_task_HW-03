@@ -11,9 +11,9 @@ node('master') {
 		def response = sh(script: " curl -I http://localhost:9889 | grep HTTP | awk '{print \$2}'", returnStdout: true).trim()
 		echo response
 		if (response != '200') {
-			echo not ok
+			echo 'not ok'
 		} else {
-			echo ok
+			echo 'ok'
 		} 	
 	}
 	stage('clear workspace') {
