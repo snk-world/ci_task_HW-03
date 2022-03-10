@@ -25,7 +25,7 @@ node('master') {
 			echo 'not ok'
 			error = true
 		}
-		if (error=true) {
+		if (error==true) {
 			echo 'error'
 		}
 
